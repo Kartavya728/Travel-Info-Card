@@ -14,14 +14,14 @@ const LOCATIONS = {
     id: 'university',
     title: '大学の住所 (University Address)',
     address: 'Indian Institute of Technology Mandi, Kamand, Mandi District, Himachal Pradesh – 175075, India',
-    iframeSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3391.871587823908!2d76.98061481515904!3d31.77545198128591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3904e215b2253081%3A0xb35a39828d57d544!2sIndian%20Institute%20of%20Technology%20Mandi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin',
+    iframeSrc: 'https://maps.google.com/maps?q=Indian+Institute+of+Technology+Mandi&t=&z=15&ie=UTF8&iwloc=&output=embed',
     icon: <GraduationCap size={24} />
   },
   india: {
     id: 'india',
     title: 'インドの自宅 (India Residence)',
     address: 'Flat No. 4, Radhey Niwas, Jadhavvasti, Kalas, Pune – 411015, Maharashtra, India',
-    iframeSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.3320297079237!2d73.87413001538356!3d18.57077678737976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c12f45511b01%3A0x8613fb2cf2f2ba8f!2sKalas%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin',
+    iframeSrc: 'https://maps.google.com/maps?q=Radhey+Niwas,+Jadhavvasti,+Kalas,+Pune,+Maharashtra,+India&t=&z=15&ie=UTF8&iwloc=&output=embed',
     icon: <Home size={24} />
   }
 };
