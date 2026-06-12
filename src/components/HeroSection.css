@@ -1,0 +1,197 @@
+/* HeroSection.css */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Samurai Frame Profile */
+.profile-wrapper {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.samurai-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+
+.frame-ring.outer {
+  width: 100%;
+  height: 100%;
+  border-color: var(--accent-gold);
+  border-top-color: transparent;
+  animation: spin 15s linear infinite;
+}
+
+.frame-ring.middle {
+  width: 90%;
+  height: 90%;
+  border-color: var(--accent-crimson);
+  border-bottom-color: transparent;
+  animation: spin-reverse 10s linear infinite;
+  opacity: 0.6;
+}
+
+.frame-ring.inner {
+  width: 80%;
+  height: 80%;
+  border-color: var(--border-hover);
+  border-left-color: transparent;
+  animation: spin 8s linear infinite;
+}
+
+.profile-img {
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 2;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.profile-wrapper:hover .profile-img {
+  transform: scale(1.05);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* Typography */
+.greeting {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--accent-gold);
+  margin-bottom: 10px;
+  letter-spacing: 0.2em;
+}
+
+.name {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 5px;
+}
+
+.japanese-name {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--text-muted);
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 30px;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.title-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-gold);
+}
+
+.bullet.text-crimson {
+  background-color: var(--accent-crimson);
+}
+
+/* Quote */
+.hero-quote {
+  padding: 20px 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  border-left: 4px solid var(--accent-crimson);
+}
+
+.hero-social-links {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.hero-social-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.hero-social-btn:hover {
+  transform: translateY(-2px);
+}
+
+.hero-social-btn.linkedin:hover {
+  background: #0077b5;
+  border-color: #0077b5;
+  color: white;
+}
+
+.hero-social-btn.whatsapp:hover {
+  background: #25D366;
+  border-color: #25D366;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 2.5rem;
+  }
+  .title-item {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
