@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Mail, AlertTriangle } from 'lucide-react';
-import { LinkedinIcon, GithubIcon } from './Icons';
+import { LinkedinIcon } from './Icons';
 import './ContactSection.css';
 
 const ContactSection: React.FC = () => {
