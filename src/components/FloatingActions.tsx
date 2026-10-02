@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Mail, ChevronUp } from 'lucide-react';
-import { LinkedinIcon, GithubIcon } from './Icons';
+import { LinkedinIcon, GithubIcon, WhatsAppIcon } from './Icons';
 import './FloatingActions.css';
 
-const FloatingActions: React.FC = () => {
+type Labels = Partial<Record<'call' | 'email' | 'whatsapp', string>>;
+
+const FloatingActions: React.FC<{ whatsapp?: string; labels?: Labels }> = ({ whatsapp, labels }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -31,11 +33,17 @@ const FloatingActions: React.FC = () => {
       <div className="action-buttons">
         <a href="tel:+918668944955" className="action-btn" aria-label="Call">
           <Phone size={20} />
-          <span className="tooltip">Call</span>
+          <span className="tooltip">{labels?.call ?? 'Call'}</span>
         </a>
+        {whatsapp && (
+          <a href={whatsapp} target="_blank" rel="noreferrer" className="action-btn" aria-label="WhatsApp">
+            <WhatsAppIcon size={20} />
+            <span className="tooltip">{labels?.whatsapp ?? 'WhatsApp'}</span>
+          </a>
+        )}
         <a href="mailto:kartavyasuryawanshi7@gmail.com" className="action-btn" aria-label="Email">
           <Mail size={20} />
-          <span className="tooltip">Email</span>
+          <span className="tooltip">{labels?.email ?? 'Email'}</span>
         </a>
         <a href="https://www.linkedin.com/in/kartavya-suryawanshi-918753320/" target="_blank" rel="noreferrer" className="action-btn" aria-label="LinkedIn">
           <LinkedinIcon size={20} />

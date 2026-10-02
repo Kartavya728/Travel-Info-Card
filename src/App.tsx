@@ -1,54 +1,30 @@
 import { useEffect } from 'react';
-import './App.css';
-import BackgroundElements from './components/BackgroundElements';
-import HeroSection from './components/HeroSection';
-import MapSection from './components/MapSection';
-import ContactSection from './components/ContactSection';
-import AboutSection from './components/AboutSection';
-import FloatingActions from './components/FloatingActions';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import EuropePage from './pages/EuropePage';
+import JapanPage from './pages/JapanPage';
+import CardsPage from './pages/CardsPage';
+import LuggagePage from './pages/LuggagePage';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function App() {
-  // Intersection Observer for fade-in animations on scroll
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-    );
-
-    const elements = document.querySelectorAll('.fade-in-section, .section-title, .about-card, .location-card, .map-container, .contact-card, .lost-found-card');
-    elements.forEach((el) => {
-      el.classList.add('fade-in-section'); // Add base class for animation
-      observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div className="app-container">
-      <BackgroundElements />
-      
-      <main>
-        <HeroSection />
-        <MapSection />
-        <ContactSection />
-        <AboutSection />
-      </main>
-
-      <FloatingActions />
-      
-      <footer className="text-center py-12 text-muted animate-fade-in" style={{ position: 'relative', zIndex: 10, padding: '60px 0' }}>
-        <h2 style={{ fontSize: '2.5rem', color: 'var(--accent-crimson)', marginBottom: '10px' }}>ありがとうございます！</h2>
-        <p style={{ fontSize: '1.2rem', marginBottom: '20px', color: 'var(--text-primary)' }}>Thank you very much!</p>
-        <p>&copy; {new Date().getFullYear()} Kartavya Mahesh Suryawanshi. All Rights Reserved.</p>
-      </footer>
-    </div>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<EuropePage />} />
+        <Route path="/japan" element={<JapanPage />} />
+        <Route path="/cards" element={<CardsPage />} />
+        <Route path="/luggage" element={<LuggagePage />} />
+        <Route path="*" element={<EuropePage />} />
+      </Routes>
+    </>
   );
 }
 

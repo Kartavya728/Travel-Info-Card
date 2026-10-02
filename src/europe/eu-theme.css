@@ -1,0 +1,65 @@
+/* Blue/white retheme of the Japan page components. Only the variables and hard-coded reds are overridden. */
+.eu-theme {
+  --bg-dark: #f4f8ff;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-card-hover: rgba(234, 242, 255, 0.95);
+  --accent-crimson: #003399;
+  --accent-crimson-glow: rgba(0, 51, 153, 0.22);
+  --accent-gold: #d9a400;
+  --accent-gold-glow: rgba(217, 164, 0, 0.25);
+  --accent-indigo: #0098d4;
+  --text-secondary: #3b4a6b;
+  --text-muted: #6a7aa0;
+  --border-color: rgba(0, 51, 153, 0.12);
+  --border-hover: rgba(0, 51, 153, 0.25);
+  --eu-blue: #003399;
+  --eu-blue-mid: #1f5fd6;
+  --eu-sky: #0098d4;
+  --eu-pale: #eaf2ff;
+  --eu-pale-2: #f5f9ff;
+  --eu-gold: #ffcc00;
+  --eu-ink: #0b1635;
+  --eu-text: #3b4a6b;
+  --eu-line: rgba(0, 51, 153, 0.12);
+  --eu-shadow: 0 12px 34px rgba(0, 51, 153, 0.10);
+
+  background: #fff;
+  isolation: isolate;
+}
+
+.eu-theme .title-kanji { color: rgba(0, 51, 153, 0.05); }
+.eu-theme .location-card:hover { border-color: rgba(0, 51, 153, 0.35); }
+.eu-theme .location-card.active { box-shadow: 0 10px 30px rgba(0, 51, 153, 0.15); }
+.eu-theme .location-icon { background: rgba(0, 51, 153, 0.07); }
+.eu-theme .travel-date-note { background: rgba(0, 51, 153, 0.05); }
+.eu-theme .bg-indigo { background-color: #0098d4; box-shadow: 0 0 15px rgba(0, 152, 212, 0.4); }
+.eu-theme .about-announcement-card::before { border-color: rgba(0, 51, 153, 0.18); }
+.eu-theme .about-vertical-title { border-right-color: rgba(0, 51, 153, 0.2); letter-spacing: 0.1em; }
+.eu-theme .scroll-top-btn:hover { background: #1f5fd6; }
+.eu-theme .lost-found-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(0, 51, 153, 0.07) 100%);
+  border-color: rgba(0, 51, 153, 0.3);
+}
+.eu-theme .lost-found-card:hover { border-color: rgba(0, 51, 153, 0.6); box-shadow: 0 10px 30px rgba(0, 51, 153, 0.12); }
+.eu-theme .lost-found-icon { background: rgba(0, 51, 153, 0.08); animation: eu-pulse-blue 2s infinite; }
+@keyframes eu-pulse-blue {
+  0% { box-shadow: 0 0 0 0 rgba(0, 51, 153, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(0, 51, 153, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 51, 153, 0); }
+}
+
+/* Background extras */
+.eu-skyline { position: fixed; left: 0; right: 0; bottom: 0; height: 32vh; z-index: -1; pointer-events: none; }
+.eu-skyline svg { width: 100%; height: 100%; display: block; }
+.snowflake {
+  position: absolute; top: 0; border-radius: 50%; opacity: 0; animation: fall linear infinite;
+  background: radial-gradient(circle, #ffffff 0%, #9cc4ff 100%); box-shadow: 0 0 8px rgba(0, 152, 212, 0.35);
+}
+
+
+.eu-theme .eu-modal-back { z-index: 200; }
+
+/* Top nav (same look as the Japan page's mini nav) */
+.eu-topnav { position: fixed; top: 16px; left: 16px; z-index: 50; display: flex; flex-wrap: wrap; gap: 8px; }
+.eu-topnav a { padding: 8px 16px; font-size: 0.9rem; }
+.eu-topnav { max-width: calc(100vw - 270px); }
